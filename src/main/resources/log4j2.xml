@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<Configuration status="WARN">
+<Configuration status="INFO">
     <Appenders>
         <!-- Console logging -->
         <Console name="Console" target="SYSTEM_OUT">
@@ -14,7 +14,7 @@
 
     <Loggers>
         <!-- Application packages -->
-        <Logger name="com.example.vehiclerental" level="debug" additivity="false">
+        <Logger name="git.joginder.mikael" level="debug" additivity="false">
             <AppenderRef ref="Console"/>
             <AppenderRef ref="FileLogger"/>
         </Logger>
