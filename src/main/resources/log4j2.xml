@@ -20,11 +20,12 @@
         </Logger>
 
         <!-- Hibernate logs (optional, set to info/warn to reduce noise) -->
-        <Logger name="org.hibernate" level="warn"/>
+        <Logger name="org.hibernate" level="info"/>
 
         <!-- Root logger -->
         <Root level="info">
             <AppenderRef ref="Console"/>
+<!--            <AppenderRef ref="FileLogger"/>-->
         </Root>
     </Loggers>
 </Configuration>
