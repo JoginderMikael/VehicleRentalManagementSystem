@@ -14,7 +14,7 @@ public class JPAUtil {
 
     static {
         logger.info("Initializing JPA EntityManagerFactory...");
-        emf = Persistence.createEntityManagerFactory("vehiclerental");
+        emf = Persistence.createEntityManagerFactory("vehicle_rental");
     }
     public static EntityManager getEntityManager(){
         logger.debug("Creating new EntifyManager instance ...");
