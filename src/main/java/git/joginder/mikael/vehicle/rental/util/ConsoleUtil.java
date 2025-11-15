@@ -1,4 +1,4 @@
-package git.joginder.mikael.util;
+package git.joginder.mikael.vehicle.rental.util;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

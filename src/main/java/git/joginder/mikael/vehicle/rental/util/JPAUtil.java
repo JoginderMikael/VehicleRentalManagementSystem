@@ -1,4 +1,4 @@
-package git.joginder.mikael.util;
+package git.joginder.mikael.vehicle.rental.util;
 
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.EntityManagerFactory;

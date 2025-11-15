@@ -1,7 +1,7 @@
-package git.joginder.mikael.service;
+package git.joginder.mikael.vehicle.rental.service;
 
-import git.joginder.mikael.dao.CustomerDAO;
-import git.joginder.mikael.entity.Customer;
+import git.joginder.mikael.vehicle.rental.dao.CustomerDAO;
+import git.joginder.mikael.vehicle.rental.entity.Customer;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 

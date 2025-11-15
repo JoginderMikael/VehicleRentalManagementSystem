@@ -4,9 +4,9 @@
 
     <persistence-unit name="vehicle_rental">
 
-        <class>git.joginder.mikael.entity.Customer</class>
-        <class>git.joginder.mikael.entity.Vehicle</class>
-        <class>git.joginder.mikael.entity.Rental</class>
+        <class>git.joginder.mikael.vehicle.rental.entity.Customer</class>
+        <class>git.joginder.mikael.vehicle.rental.entity.Vehicle</class>
+        <class>git.joginder.mikael.vehicle.rental.entity.Rental</class>
 
         <properties>
 

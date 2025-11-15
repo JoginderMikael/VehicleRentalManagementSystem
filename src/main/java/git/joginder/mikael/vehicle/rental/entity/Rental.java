@@ -1,4 +1,4 @@
-package git.joginder.mikael.entity;
+package git.joginder.mikael.vehicle.rental.entity;
 
 import jakarta.persistence.*;
 

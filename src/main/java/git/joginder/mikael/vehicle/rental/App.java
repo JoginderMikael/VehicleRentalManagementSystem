@@ -1,6 +1,6 @@
-package git.joginder.mikael;
+package git.joginder.mikael.vehicle.rental;
 
-import git.joginder.mikael.ui.MainMenu;
+import git.joginder.mikael.vehicle.rental.ui.MainMenu;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

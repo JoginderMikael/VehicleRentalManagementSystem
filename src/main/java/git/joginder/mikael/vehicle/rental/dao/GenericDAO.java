@@ -1,6 +1,6 @@
-package git.joginder.mikael.dao;
+package git.joginder.mikael.vehicle.rental.dao;
 
-import git.joginder.mikael.util.JPAUtil;
+import git.joginder.mikael.vehicle.rental.util.JPAUtil;
 import jakarta.persistence.EntityManager;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

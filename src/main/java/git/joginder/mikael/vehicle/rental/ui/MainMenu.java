@@ -1,10 +1,10 @@
-package git.joginder.mikael.ui;
+package git.joginder.mikael.vehicle.rental.ui;
 
-import git.joginder.mikael.service.CustomerService;
-import git.joginder.mikael.service.RentalService;
-import git.joginder.mikael.service.VehicleService;
-import git.joginder.mikael.util.ConsoleUtil;
-import git.joginder.mikael.util.JPAUtil;
+import git.joginder.mikael.vehicle.rental.service.CustomerService;
+import git.joginder.mikael.vehicle.rental.service.RentalService;
+import git.joginder.mikael.vehicle.rental.service.VehicleService;
+import git.joginder.mikael.vehicle.rental.util.ConsoleUtil;
+import git.joginder.mikael.vehicle.rental.util.JPAUtil;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
