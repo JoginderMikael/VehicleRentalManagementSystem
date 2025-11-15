@@ -24,9 +24,8 @@ public class Customer {
         return id;
     }
 
-    public Customer setId(Long id) {
+    public void setId(Long id) {
         this.id = id;
-        return this;
     }
 
     public String getName() {
