@@ -91,8 +91,8 @@ public class Rental {
     public String toString() {
         return "\nRENTAL DETAILS \n"
                 + "ID: \t" + this.getId() + "\n"
-                + "CUSTOMER: \t" + this.getCustomer() + "\n"
-                + "VEHICLE: \t" + this.getVehicle() + "\n"
+                + "CUSTOMER: \t" + (this.getCustomer() != null ? this.getCustomer().getName() : "None" )+ "\n"
+                + "VEHICLE: \t" + (this.getVehicle() != null ? this.getVehicle().getModel(): "None") + "\n"
                 + "START DATE: \t" + this.getStartDate() + "\n"
                 + "END DATE: \t" + this.getEndDate() + "\n"
                 + "TOTAL COST: \t" + this.getTotalCost() + "\n"

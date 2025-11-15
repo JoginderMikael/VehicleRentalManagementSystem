@@ -79,28 +79,7 @@ public class RentalService {
         IO.println("Vehicle returned successfully!");
     }
 
-    //add a vehicle to the system
-    public void addVehicle(String model, String type, double dailyRate){
-        Vehicle vehicle = new Vehicle()
-                .setModel(model)
-                .setType(type)
-                .setDailyRate(dailyRate)
-                .setAvailable(true);
-
-        vehicleDAO.save(vehicle);
-        logger.info("Vehicle added successfully: {} ", model);
-    }
-    // add customer to the system
-public void addCustomer(String name, String phone, String email){
-        Customer customer = new Customer()
-                .setName(name)
-                .setPhone(phone)
-                .setEmail(email);
-
-        customerDAO.save(customer);
-        logger.info("Customer added: {}", name);
-}
-
+    //viewing all rentals
     public void viewAllRentals() {
         List<Rental> rentals = rentalDAO.getAllRentals();
         rentals.forEach(IO::println);

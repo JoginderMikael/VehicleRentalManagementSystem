@@ -17,11 +17,6 @@ public class VehicleDAO extends GenericDAO<Vehicle> {
         super(Vehicle.class);
     }
 
-public List<Vehicle> findAvailable(){
-        logger.info("Querying all available vehicles");
-        return em.createQuery("FROM Vehicle v WHERE v.isvailable = true", Vehicle.class).
-                getResultList();
-}
 
 public List<Vehicle> getAllVehicles(){
     try (EntityManager em = JPAUtil.getEntityManager()) {

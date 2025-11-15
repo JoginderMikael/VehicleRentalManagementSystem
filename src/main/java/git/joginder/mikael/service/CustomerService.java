@@ -1,7 +1,6 @@
 package git.joginder.mikael.service;
 
 import git.joginder.mikael.dao.CustomerDAO;
-import git.joginder.mikael.dao.RentalDAO;
 import git.joginder.mikael.entity.Customer;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -11,6 +10,7 @@ import java.util.List;
 public class CustomerService {
 
     private static final Logger logger = LoggerFactory.getLogger(CustomerService.class);
+    private final CustomerDAO customerDAO = new CustomerDAO();
 
     public void viewAllCustomers() {
         logger.info("Fetching all customers....");
@@ -33,6 +33,18 @@ public class CustomerService {
 
         IO.println("\n Customer Found: \n" + customer);
         logger.info("Customer found: {}", customer.getId());
+    }
+
+    // add customer to the system
+    public void addCustomer(String name, String phone, String email){
+        Customer customer = new Customer()
+                .setName(name)
+                .setPhone(phone)
+                .setEmail(email);
+
+        customerDAO.save(customer);
+        logger.info("Customer added: {}", name);
+        IO.println("The customer added successfully.");
     }
 
 }

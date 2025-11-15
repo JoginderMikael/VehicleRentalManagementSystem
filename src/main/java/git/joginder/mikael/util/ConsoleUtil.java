@@ -78,7 +78,7 @@ public class ConsoleUtil {
     public static double readDouble(String message){
         while(true){
             try{
-                IO.println(message);
+                IO.print(message);
                 String input = scanner.nextLine();
 
                 double value = Double.parseDouble(input.trim());
@@ -94,11 +94,11 @@ public class ConsoleUtil {
         }
     }
 
-    //Read Yes/No
+    //Read Yes/No -TO BE USED LATER.
     public static boolean readBoolean(String message){
         while(true){
             try{
-                IO.println(message + " (y/n): ");
+                IO.print(message + " (y/n): ");
                 String input = scanner.nextLine().trim().toLowerCase();
 
                 if(input.equals("y") || input.equals("yes")){

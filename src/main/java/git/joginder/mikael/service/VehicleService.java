@@ -1,6 +1,5 @@
 package git.joginder.mikael.service;
 
-import git.joginder.mikael.dao.RentalDAO;
 import git.joginder.mikael.dao.VehicleDAO;
 import git.joginder.mikael.entity.Vehicle;
 import org.slf4j.Logger;
@@ -11,6 +10,7 @@ import java.util.List;
 public class VehicleService {
 
     private static final Logger logger = LoggerFactory.getLogger(VehicleService.class);
+    private final VehicleDAO vehicleDAO = new VehicleDAO();
 
     public void viewAllVehicles() {
         VehicleDAO vehicleDAO = new VehicleDAO();
@@ -32,6 +32,19 @@ public class VehicleService {
 
         IO.println("Vehicle found: \n" + vehicle);
         logger.info("Vehicle found: {}", vehicle.getId());
+    }
+
+    //add a vehicle to the system
+    public void addVehicle(String model, String type, double dailyRate){
+        Vehicle vehicle = new Vehicle()
+                .setModel(model)
+                .setType(type)
+                .setDailyRate(dailyRate)
+                .setAvailable(true);
+
+        vehicleDAO.save(vehicle);
+        logger.info("Vehicle added successfully: {} ", model);
+        IO.println("Vehicle Added successfully.");
     }
 
 }

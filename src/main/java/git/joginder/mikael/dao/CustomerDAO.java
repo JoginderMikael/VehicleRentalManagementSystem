@@ -11,13 +11,14 @@ import java.util.List;
 
 public class CustomerDAO extends GenericDAO<Customer> {
 
-    private static final Logger log = LoggerFactory.getLogger(CustomerDAO.class);
+    private static final Logger logger = LoggerFactory.getLogger(CustomerDAO.class);
 
     public CustomerDAO() {
         super(Customer.class);
     }
 
     public List<Customer> getAllCustomers(){
+        logger.info("Fetching all customers...");
         try (EntityManager em = JPAUtil.getEntityManager()) {
             TypedQuery<Customer> query =
                     em.createQuery("SELECT DISTINCT c FROM Customer c LEFT JOIN FETCH c.rentals", Customer.class);
