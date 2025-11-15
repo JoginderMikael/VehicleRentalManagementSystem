@@ -103,12 +103,7 @@ public void addCustomer(String name, String phone, String email){
 
     public void viewAllRentals() {
         List<Rental> rentals = rentalDAO.getAllRentals();
-        rentals.forEach(r -> IO.println(
-                r.getId() + " | Customer: " + r.getCustomer().getName() +
-                        " | Vehicle: " + r.getVehicle().getModel() +
-                        " | Rented: " + r.getStartDate() +
-                        " | Returned: " + r.isReturned()
-        ));
+        rentals.forEach(IO::println);
     }
 
     public void viewAllVehicles() {

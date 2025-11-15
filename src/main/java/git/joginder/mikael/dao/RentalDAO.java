@@ -18,7 +18,7 @@ public class RentalDAO extends GenericDAO<Rental>{
     public List<Rental> getAllRentals(){
         try{
             TypedQuery<Rental> query =
-                    em.createQuery("SELECT r FROM rental r", Rental.class);
+                    em.createQuery("SELECT r FROM Rental r", Rental.class);
             return query.getResultList();
         }finally {
             em.close();

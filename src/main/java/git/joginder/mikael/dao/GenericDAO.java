@@ -49,24 +49,7 @@ public class GenericDAO<T> {
 
     //listing all entities
     public List<T> findAll(){
-        return em.createQuery("from " + type.getSimpleName(), type).getResultList();
+        return em.createQuery("FROM " + type.getSimpleName(), type).getResultList();
     }
-
-//    //creating the entities
-//    public void create(T entity) {
-//        EntityManager em = JPAUtil.getEntityManager();
-//
-//        EntityTransaction tx = null;
-//        try (em) {
-//            tx = em.getTransaction();
-//            tx.begin();
-//            em.persist(entity);
-//            tx.commit();
-//        } catch (Exception e) {
-//            assert tx != null;
-//            if (tx.isActive()) tx.rollback();
-//            throw e;
-//        }
-//    }
 
 }

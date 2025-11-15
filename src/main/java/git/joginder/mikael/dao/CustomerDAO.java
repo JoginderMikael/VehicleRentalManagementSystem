@@ -20,7 +20,7 @@ public class CustomerDAO extends GenericDAO<Customer> {
     public List<Customer> getAllCustomers(){
         try (EntityManager em = JPAUtil.getEntityManager()) {
             TypedQuery<Customer> query =
-                    em.createQuery("SELECT c FROM Customer c", Customer.class);
+                    em.createQuery("SELECT DISTINCT c FROM Customer c LEFT JOIN FETCH c.rentals", Customer.class);
             return query.getResultList();
         }
     }

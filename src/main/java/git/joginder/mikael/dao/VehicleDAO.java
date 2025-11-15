@@ -26,7 +26,7 @@ public List<Vehicle> findAvailable(){
 public List<Vehicle> getAllVehicles(){
     try (EntityManager em = JPAUtil.getEntityManager()) {
         TypedQuery<Vehicle> query =
-                em.createQuery("SELECT v FROM Vehicle v", Vehicle.class);
+                em.createQuery("SELECT DISTINCT v FROM Vehicle v LEFT JOIN FETCH v.rental", Vehicle.class);
         return query.getResultList();
      }
     }
