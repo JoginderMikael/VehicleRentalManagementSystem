@@ -1,7 +1,9 @@
 package git.joginder.mikael;
 
+import git.joginder.mikael.service.CustomerService;
 import git.joginder.mikael.service.RentalService;
 
+import git.joginder.mikael.service.VehicleService;
 import git.joginder.mikael.util.ConsoleUtil;
 import git.joginder.mikael.util.JPAUtil;
 import org.slf4j.Logger;
@@ -19,16 +21,20 @@ public class App {
         IO.println("----------------------");
 
         var rentalService = new RentalService();
+        var customerService = new CustomerService();
+        var vehicleService = new VehicleService();
 
         while(true){
             IO.println("\n=== VEHICLE RENTAL SYSTEM ===");
-            IO.println("1. Add Vehicle");
-            IO.println("2. View All Vehicles");
-            IO.println("3. Add Customer");
-            IO.println("4. View All Customers");
-            IO.println("5. Rent a Vehicle");
+            IO.println("1. Add Vehicle.");
+            IO.println("2. View All Vehicles.");
+            IO.println("3. Add Customer.");
+            IO.println("4. View All Customers.");
+            IO.println("5. Rent a Vehicle.");
             IO.println("6. Return a Vehicle.");
-            IO.println("7. View All Rentals");
+            IO.println("7. View All Rentals.");
+            IO.println("8. Search Customer by ID.");
+            IO.println("9. Search Vehicle by ID.");
             IO.println("0. Exit");
 
             int choice = ConsoleUtil.readInt("Enter Your choice: ");
@@ -42,7 +48,7 @@ public class App {
                     break;
                 }
                 case 2 -> {
-                    rentalService.viewAllVehicles();
+                    vehicleService.viewAllVehicles();
                     break;
                 }
                 case 3 -> {
@@ -54,7 +60,7 @@ public class App {
 
                 }
                 case 4 -> {
-                    rentalService.viewAllCustomers();
+                    customerService.viewAllCustomers();
                     break;
                 }
                 case 5 -> {
@@ -70,6 +76,14 @@ public class App {
                 case 7 -> {
                     rentalService.viewAllRentals();
                     break;
+                }
+                case 8 -> {
+                    Long customerId = ConsoleUtil.readLong("Customer ID: ");
+                    customerService.searchCustomerById(customerId);
+                }
+                case 9 -> {
+                    Long vehicleId = ConsoleUtil.readLong("Vehicle ID: ");
+                    vehicleService.searchVehicleById(vehicleId);
                 }
                 case 0 ->  {
                     logger.info("System exiting...");

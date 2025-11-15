@@ -18,4 +18,20 @@ public class VehicleService {
         vehicles.forEach(IO::println); //utilizing the toString method. v.toString()
     }
 
+    public void searchVehicleById(Long Id){
+        logger.info("Searching vehicle by Id: {}", Id);
+
+        VehicleDAO vehicleDAO = new VehicleDAO();
+        Vehicle vehicle = vehicleDAO.findById(Id);
+
+        if(vehicle == null){
+            IO.println("No vehicle found with ID: " + Id);
+            logger.warn("Vehicle search filed. No customer found for ID {}", Id);
+            return;
+        }
+
+        IO.println("Vehicle found: \n" + vehicle);
+        logger.info("Vehicle found: {}", vehicle.getId());
+    }
+
 }

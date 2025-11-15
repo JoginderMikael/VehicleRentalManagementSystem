@@ -106,14 +106,5 @@ public void addCustomer(String name, String phone, String email){
         rentals.forEach(IO::println);
     }
 
-    public void viewAllVehicles() {
-        VehicleService vehicleService = new VehicleService();
-        vehicleService.viewAllVehicles();
-    }
-
-    public void viewAllCustomers() {
-        CustomerService customerService = new CustomerService();
-        customerService.viewAllCustomers();
-    }
 }
 
