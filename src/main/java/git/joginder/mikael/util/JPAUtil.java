@@ -17,7 +17,7 @@ public class JPAUtil {
         emf = Persistence.createEntityManagerFactory("vehicle_rental");
     }
     public static EntityManager getEntityManager(){
-        logger.debug("Creating new EntifyManager instance ...");
+        logger.debug("Creating new EntityManager instance ...");
         return emf.createEntityManager();
     }
 

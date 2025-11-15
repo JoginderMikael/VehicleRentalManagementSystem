@@ -83,7 +83,7 @@ public class Vehicle {
                 + "TYPE: \t" + this.getType() + "\n"
                 + "DAILY RATE: \t" + this.getDailyRate() + "\n"
                 + "AVAILABLE: \t" + this.isAvailable() + "\n"
-                + "RENTAL: \t" + this.getRental() + "\n"
+               // + "RENTAL: \t" + (this.getRental() != null ? this.getRental() : "None" ) + "\n"
                 ;
     }
 }

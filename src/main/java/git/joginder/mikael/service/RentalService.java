@@ -10,6 +10,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import java.time.LocalDate;
+import java.util.List;
 
 public class RentalService {
 
@@ -20,6 +21,7 @@ public class RentalService {
     private final RentalDAO rentalDAO = new RentalDAO();
 
 
+    //renting a vehicle
     public void rentVehicle(Long customerId, Long vehicleId, int days){
         logger.info("Attempting to rent vehicle ID = {} to customer ID = {} for {} days", vehicleId, customerId, days);
         Customer customer = customerDAO.findById(customerId);
@@ -32,7 +34,7 @@ public class RentalService {
         }
 
         if(!vehicle.isAvailable()){
-            logger.warn("Vehicle ID = {} is not available", vehicleId);
+            logger.warn("Vehicle ID = {} is not available", vehicle.getModel());
             IO.println("Vehicle not available.");
             return;
         }
@@ -55,6 +57,7 @@ public class RentalService {
 
     }
 
+    //returning a vehicle
     public void returnVehicle(Long rentalId){
         logger.info("Processing return for rental ID = {}", rentalId);
         Rental rental = rentalDAO.findById(rentalId);
@@ -72,10 +75,50 @@ public class RentalService {
         rentalDAO.update(rental);
         vehicleDAO.update(vehicle);
 
-        logger.info("Vehicle ID = {} returned successfully.", vehicle.getId());
+        logger.info("Vehicle ID = {} returned successfully.", vehicle.getModel());
         IO.println("Vehicle returned successfully!");
     }
 
+    //add a vehicle to the system
+    public void addVehicle(String model, String type, double dailyRate){
+        Vehicle vehicle = new Vehicle()
+                .setModel(model)
+                .setType(type)
+                .setDailyRate(dailyRate)
+                .setAvailable(true);
 
+        vehicleDAO.save(vehicle);
+        logger.info("Vehicle added successfully: {} ", model);
+    }
+    // add customer to the system
+public void addCustomer(String name, String phone, String email){
+        Customer customer = new Customer()
+                .setName(name)
+                .setPhone(phone)
+                .setEmail(email);
+
+        customerDAO.save(customer);
+        logger.info("Customer added: {}", name);
+}
+
+    public void viewAllRentals() {
+        List<Rental> rentals = rentalDAO.getAllRentals();
+        rentals.forEach(r -> IO.println(
+                r.getId() + " | Customer: " + r.getCustomer().getName() +
+                        " | Vehicle: " + r.getVehicle().getModel() +
+                        " | Rented: " + r.getStartDate() +
+                        " | Returned: " + r.isReturned()
+        ));
+    }
+
+    public void viewAllVehicles() {
+        VehicleService vehicleService = new VehicleService();
+        vehicleService.viewAllVehicles();
+    }
+
+    public void viewAllCustomers() {
+        CustomerService customerService = new CustomerService();
+        customerService.viewAllCustomers();
+    }
 }
 

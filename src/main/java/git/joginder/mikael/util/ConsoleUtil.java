@@ -5,7 +5,7 @@ import java.util.Scanner;
 public class ConsoleUtil {
     private static final Scanner scanner = new Scanner(System.in);
     public static String read(String message){
-        System.out.println((message));
+        IO.print((message));
         return scanner.nextLine();
     }
 }

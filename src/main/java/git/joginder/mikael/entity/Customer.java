@@ -71,7 +71,8 @@ public class Customer {
                 + "NAME: \t" + this.getName() + "\n"
                 + "PHONE: \t" + this.getPhone() + "\n"
                 + "EMAIL: \t" + this.getEmail() + "\n"
-                + "RENTALS: \t" + this.getRentals()+ "\n";
+              //  + "RENTALS: \t" + this.getRentals()+ "\n";
+        ;
     }
 
 }

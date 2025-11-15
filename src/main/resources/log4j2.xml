@@ -14,7 +14,7 @@
 
     <Loggers>
         <!-- Application packages -->
-        <Logger name="git.joginder.mikael" level="debug" additivity="false">
+        <Logger name="git.joginder.mikael" level="debug" additivity="true">
             <AppenderRef ref="Console"/>
             <AppenderRef ref="FileLogger"/>
         </Logger>
