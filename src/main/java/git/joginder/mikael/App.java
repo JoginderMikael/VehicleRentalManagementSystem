@@ -31,13 +31,13 @@ public class App {
             IO.println("7. View All Rentals");
             IO.println("0. Exit");
 
-            int choice = Integer.parseInt(ConsoleUtil.read("Enter Your choice: "));
+            int choice = ConsoleUtil.readInt("Enter Your choice: ");
 
             switch (choice){
                 case 1 ->{
-                    String model = ConsoleUtil.read("Model: ");
-                    String type = ConsoleUtil.read("Type: ");
-                    double dailyRate = Double.parseDouble(ConsoleUtil.read("Daily Rate: "));
+                    String model = ConsoleUtil.readString("Model: ");
+                    String type = ConsoleUtil.readString("Type: ");
+                    double dailyRate = ConsoleUtil.readDouble("Daily Rate: ");
                     rentalService.addVehicle(model, type, dailyRate);
                     break;
                 }
@@ -46,9 +46,9 @@ public class App {
                     break;
                 }
                 case 3 -> {
-                    String name = ConsoleUtil.read("Customer Name: ");
-                    String phone = ConsoleUtil.read("Phone: ");
-                    String email = ConsoleUtil.read("Email: ");
+                    String name = ConsoleUtil.readString("Customer Name: ");
+                    String phone = ConsoleUtil.readString("Phone: ");
+                    String email = ConsoleUtil.readString("Email: ");
                     rentalService.addCustomer(name, phone, email);
                     break;
 
@@ -58,13 +58,13 @@ public class App {
                     break;
                 }
                 case 5 -> {
-                    Long custId = Long.parseLong(ConsoleUtil.read("Customer ID: "));
-                    Long vehId = Long.parseLong(ConsoleUtil.read("Vehicle ID: "));
-                    int days = Integer.parseInt(ConsoleUtil.read("Days: "));
+                    Long custId = ConsoleUtil.readLong("Customer ID: ");
+                    Long vehId = ConsoleUtil.readLong("Vehicle ID: ");
+                    int days = ConsoleUtil.readInt("Days: ");
                     rentalService.rentVehicle(custId,vehId,days);
                 }
                 case 6 -> {
-                    Long rentId = Long.parseLong(ConsoleUtil.read("Rental ID: "));
+                    Long rentId = ConsoleUtil.readLong("Rental ID: ");
                     rentalService.returnVehicle(rentId);
                 }
                 case 7 -> {
